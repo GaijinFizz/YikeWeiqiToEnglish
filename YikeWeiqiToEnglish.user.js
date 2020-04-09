@@ -21,8 +21,21 @@
                      case '取消':
                          $(this).text('Cancel');
                          break;
+                     case '执黑':
+                         $(this).text('Black');
+                         break;
+                     case '执白':
+                         $(this).text('White');
+                         break;
+                     case '积分':
+                         $(this).text('Rated');
+                         break;
+                     case '非积分':
+                         $(this).text('Non Rated');
+                         break;
                  }
              });
+
 
              // Navigation - top level
              $('.ivu-menu-item').each(function() {
@@ -31,7 +44,7 @@
                          $(this).text('Games');
                          break;
                      case '直播':
-                         $(this).text('Live broadcast');
+                         $(this).text('Live Broadcast');
                          break;
                      case '赛事':
                          $(this).text('Tournaments');
@@ -40,28 +53,76 @@
                          $(this).text('Go news');
                          break;
                      case '鹰眼市场':
-                         $(this).text('Hawkeye market (AI)');
+                         $(this).text('Hawkeye Market (AI)');
                          break;
                      case '我的棋谱':
-                         $(this).text('My game records');
+                         $(this).text('My Game Records');
                          break;
                      case '线下赛事报名':
-                         $(this).text('Offline events registration');
+                         $(this).text('Offline Events Registration');
                          break;
                      case '下载App':
-                         $(this).text('Download app');
+                         $(this).text('Download App');
                          break;
                      case '智能棋盘':
-                         $(this).text('Electronic board');
+                         $(this).text('Electronic Board');
                          break;
                      case '购买棋盘':
-                         $(this).text('Buy board');
+                         $(this).text('Buy Board');
                          break;
                      case '下载连接器':
-                         $(this).text('Download connector');
+                         $(this).text('Download Connector');
                          break;
                  }
              });
+
+             // Custom game menu
+             $('div.tiny_title').each(function() {
+                 switch($(this).text().trim()) {
+                     case '玩法':
+                         $(this).text('Game Type');
+                         break;
+                     case '棋盘路数':
+                         $(this).text('Board Size');
+                         break;
+                     case '休息时间':
+                         $(this).text('Pause');
+                         break;
+                     case '让子规则':
+                         $(this).text('Handicap');
+                         break;
+                     case '时间规则':
+                         $(this).text('Timer');
+                         break;
+                     case '执子颜色':
+                         $(this).text('My Color');
+                         break;
+                     case '是否积分':
+                         $(this).text('Rated?');
+                         break;
+                 }
+             });
+             $('.ivu-select-selected-value').each(function() {
+                 switch($(this).text().trim()) {
+                     case '中国规则':
+                         $(this).text('Chinese Rules');
+                         break;
+                     case '天弈规则':
+                         $(this).text('Sky Go Rules');
+                         break;
+                 }
+             });
+             $('.ivu-select-item').each(function() {
+                 switch($(this).text().trim()) {
+                     case '中国规则':
+                         $(this).text('Chinese Rules');
+                         break;
+                     case '天弈规则':
+                         $(this).text('Sky Go Rules');
+                         break;
+                 }
+             });
+
 
              // Game info
              $('.play_info').each(function() {
