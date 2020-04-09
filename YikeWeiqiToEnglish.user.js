@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YikeWeiqiToEnglish
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Translate YikeWeiqi to English
 // @match        https://home.yikeweiqi.com/
 // @grant        none
@@ -20,6 +20,45 @@
                          break;
                      case '取消':
                          $(this).text('Cancel');
+                         break;
+                 }
+             });
+
+             // Navigation - top level
+             $('.ivu-menu-item').each(function() {
+                 switch($(this).text().trim()) {
+                     case '对弈':
+                         $(this).text('Games');
+                         break;
+                     case '直播':
+                         $(this).text('Live broadcast');
+                         break;
+                     case '赛事':
+                         $(this).text('Tournaments');
+                         break;
+                     case '弈闻':
+                         $(this).text('Go news');
+                         break;
+                     case '鹰眼市场':
+                         $(this).text('Hawkeye market (AI)');
+                         break;
+                     case '我的棋谱':
+                         $(this).text('My game records');
+                         break;
+                     case '线下赛事报名':
+                         $(this).text('Offline events registration');
+                         break;
+                     case '下载App':
+                         $(this).text('Download app');
+                         break;
+                     case '智能棋盘':
+                         $(this).text('Electronic board');
+                         break;
+                     case '购买棋盘':
+                         $(this).text('Buy board');
+                         break;
+                     case '下载连接器':
+                         $(this).text('Download connector');
                          break;
                  }
              });
