@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YikeWeiqiToEnglish
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.2.1
 // @description  Translate YikeWeiqi to English
 // @match        https://home.yikeweiqi.com/
 // @grant        none
