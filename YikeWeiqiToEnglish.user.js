@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YikeWeiqiToEnglish
 // @namespace    http://tampermonkey.net/
-// @version      0.2.1
+// @version      0.2
 // @description  Translate YikeWeiqi to English
 // @match        https://home.yikeweiqi.com/
 // @grant        none
@@ -33,8 +33,45 @@
                      case '非积分':
                          $(this).text('Non Rated');
                          break;
+                     case '历史对局':
+                         $(this).text('History');
+                         break;
+                     case '成为会员':
+                         $(this).text('Membership');
+                         break;
+                     case '登录':
+                         $(this).text('Log In');
+                         break;
+                     case '点击注册':
+                         $(this).text('Register');
+                         break;
+                     case '确认':
+                         $(this).text('Confirm');
+                         break;
                  }
              });
+
+             // Registration form
+             $('.ivu-input').each(function() {
+                 switch($(this).attr('placeholder')) {
+                     case '请输入您的姓名':
+                         $(this).attr('placeholder', 'Enter your full name');
+                         break;
+                     case '请输入手机号':
+                         $(this).attr('placeholder', 'Enter your email');
+                         break;
+                     case '输入验证码':
+                         $(this).attr('placeholder', 'Activation code (received by email)');
+                         break;
+                     case '请输入密码':
+                         $(this).attr('placeholder', 'Password');
+                         break;
+                     case '再次确认密码':
+                         $(this).attr('placeholder', 'Password confirmation');
+                         break;
+                 }
+             });
+
 
 
              // Navigation - top level
@@ -119,6 +156,15 @@
                          break;
                      case '天弈规则':
                          $(this).text('Sky Go Rules');
+                         break;
+                     case '10天一手':
+                         $(this).text('10 days/move');
+                         break;
+                     case '3天一手':
+                         $(this).text('3 days/move');
+                         break;
+                     case '1天一手':
+                         $(this).text('1 day/move');
                          break;
                  }
              });
