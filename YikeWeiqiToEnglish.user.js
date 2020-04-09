@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YikeWeiqiToEnglish
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.2.2
 // @description  Translate YikeWeiqi to English
 // @match        https://home.yikeweiqi.com/
 // @grant        none
@@ -10,7 +10,7 @@
 (function() {
     'use strict';
      $(document).ready(function() {
-         setTimeout(function(){   // Set 5s timeout because buttons are sometimes not loaded yet, also YikeWeiqi does replace some button texts itself beforehand...
+         setInterval(function(){   // Set 5s timeout because buttons are sometimes not loaded yet, also YikeWeiqi does replace some button texts itself beforehand...
 
              // Simple buttons across the website
              $('span').each(function() {
@@ -250,6 +250,6 @@
                  }
              });
 
-         }, 5000);
+         }, 2000);
      });
 })();
