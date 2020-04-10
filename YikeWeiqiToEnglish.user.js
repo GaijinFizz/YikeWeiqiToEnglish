@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YikeWeiqiToEnglish
 // @namespace    http://tampermonkey.net/
-// @version      0.2.2
+// @version      0.2.3
 // @description  Translate YikeWeiqi to English
 // @match        https://home.yikeweiqi.com/
 // @grant        none
@@ -10,7 +10,7 @@
 (function() {
     'use strict';
      $(document).ready(function() {
-         setTimeout(function(){   // Set 5s timeout because buttons are sometimes not loaded yet, also YikeWeiqi does replace some button texts itself beforehand...
+         setInterval(function(){   // Set 5s timeout because buttons are sometimes not loaded yet, also YikeWeiqi does replace some button texts itself beforehand...
 
              // Simple buttons across the website
              $('span').each(function() {
@@ -172,12 +172,12 @@
 
              // Game info
              $('.play_info').each(function() {
-                 if ($(this).text().indexOf('提子') !== -1)
-                     $(this).text($(this).text().replace(/提/g,'').replace(/子/g,'').replace('：','Prisoners:'));
-                 if ($(this).text().indexOf('读秒') !== -1)
-                     $(this).text($(this).text().replace('读秒','Byo-yomi').replace('次', 'times left'));
-                 if ($(this).text().indexOf('时间') !== -1)
-                     $(this).text($(this).text().replace('时间','Main Time'));
+                 if ($(this).text().indexOf('提子') !== -1 && $(this).prev().text()!=='(Prisoners)')
+                     $(this).before('<span>(Prisoners)</span>');
+                 if ($(this).text().indexOf('读秒') !== -1 && $(this).prev().text()!=='(Byo-yomi)')
+                     $(this).before('<span>(Byo-yomi)</span>');
+                 if ($(this).text().indexOf('时间') !== -1 && $(this).prev().text()!=='(Main Time)')
+                     $(this).before('<span>(Main Time)</span>');
              });
 
              // Review / In game screens
