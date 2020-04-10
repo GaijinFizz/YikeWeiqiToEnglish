@@ -10,7 +10,7 @@
 (function() {
     'use strict';
      $(document).ready(function() {
-         setInterval(function(){   // Set 2s interval for refreshing translations
+         setTimeout(function(){   // Set 5s timeout because buttons are sometimes not loaded yet, also YikeWeiqi does replace some button texts itself beforehand...
 
              // Simple buttons across the website
              $('span').each(function() {
@@ -250,6 +250,6 @@
                  }
              });
 
-         }, 2000);
+         }, 5000);
      });
 })();
