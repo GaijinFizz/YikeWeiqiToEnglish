@@ -58,10 +58,10 @@
                          $(this).attr('placeholder', 'Enter your full name');
                          break;
                      case '请输入手机号':
-                         $(this).attr('placeholder', 'Enter your email');
+                         $(this).attr('placeholder', 'Enter your phone number');
                          break;
                      case '输入验证码':
-                         $(this).attr('placeholder', 'Activation code (received by email)');
+                         $(this).attr('placeholder', 'Activation code (received by sms)');
                          break;
                      case '请输入密码':
                          $(this).attr('placeholder', 'Password');
